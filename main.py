@@ -68,8 +68,14 @@ def rectangle(string, w, h):
 rectangle("8", 4,3)
 
 #5:
-def bottle_verse(num):
-	BOB = "bottles of beer"
-	print(f"{num} {BOB} on the wall\n{num} {BOB}\nTake one down, pass it around\n{num-1} {BOB} on the wall\n")
+def bob(num):
+	string = "bottle of beer"
+	if num != 1:
+		string = string.replace("le", "les")
+	return string
 
-bottle_verse(99)
+def bottle_verse(num):
+	string = (f"{num} {bob(num)} on the wall\n{num} {bob(num)}\nTake one down, pass it around\n{num-1} {bob(num-1)} on the wall\n")
+	print(string)
+
+bottle_verse(2)
